@@ -11,7 +11,6 @@ import { CourseModule } from './courses/course.module';
 @NgModule({
   declarations: [
     AppComponent,
-    Error404Compoment,
   ],
   imports: [
     BrowserModule,
@@ -21,9 +20,6 @@ import { CourseModule } from './courses/course.module';
     RouterModule.forRoot([
       {
         path: '', redirectTo: 'courses', pathMatch: 'full'
-      },      
-      {
-        path:'**', component: Error404Compoment
       }
     ])
   ],
