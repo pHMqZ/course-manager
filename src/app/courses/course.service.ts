@@ -13,12 +13,12 @@ export class CourseService{
 
     constructor(private httpClient: HttpClient) { }
 
-    retriveAll(): Observable<Course[]> {
+    retrieveAll(): Observable<Course[]> {
         return this.httpClient.get<Course[]>(this.courseUrl);
     }
 
-    retriveById(id: number): Course {
-        return COURSES.find((courseIterator: Course) => courseIterator.id === id);
+    retrieveById(id: number): Observable<Course> {
+        return this.httpClient.get<Course>(`${this.courseUrl}/${id}`);
     }
 
     save(course: Course): void{
