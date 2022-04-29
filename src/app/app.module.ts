@@ -3,21 +3,21 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { Error404Compoment } from './core/component/error-404/error-404.component';
+import { CoreModule } from './core/core.module';
 import { CourseModule } from './courses/course.module';
-import { Error404Compoment } from './error-404/error-404.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent,
     Error404Compoment,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     CourseModule,
+    CoreModule,
     RouterModule.forRoot([
       {
         path: '', redirectTo: 'courses', pathMatch: 'full'
